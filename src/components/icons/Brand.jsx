@@ -1,7 +1,7 @@
 const Brand = () => {
     return (
-        <div className="brand">
-            <img className="flex size-48" src="/src/assets/static/yummy-sensei-logo.png" alt="Yummy Sensei - Japanse Food Restaurant"/>
+        <div className="flex flex-row justify-between items-center">
+            <img className="size-44" src="/src/assets/static/yummy-sensei-logo.png" alt="Yummy Sensei - Japanse Food Restaurant"/>
         </div>
     );
 }
