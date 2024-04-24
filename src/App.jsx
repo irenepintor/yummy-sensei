@@ -1,7 +1,7 @@
 //import { useState } from 'react'
 import '@fontsource/gantari';
 import './App.css'
-import NavBarContainer from './components/NavBarContainer';
+import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <NavBarContainer/>
+      <NavBar/>
       <ItemListContainer greeting={"Bienvenidos a Yummy Sensei!"}/>
     </>
   )

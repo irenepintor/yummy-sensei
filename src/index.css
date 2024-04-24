@@ -4,6 +4,16 @@
 
 :root {
   color-scheme: light dark;
+  --primary-100:#FF6347;
+  --primary-200:#dc442e;
+  --primary-300:#8d0000;
+  --accent-100:#FFD700;
+  --accent-200:#917800;
+  --text-100:#333333;
+  --text-200:#5c5c5c;
+  --bg-100:#F5F5F5;
+  --bg-200:#ebebeb;
+  --bg-300:#c2c2c2;
 }
 
 html{
@@ -14,7 +24,7 @@ html{
 
 body {
   color: rgba(17, 17, 17, 0.9);
-  background-color: #F7EAD9;
+  background-color: var(--bg-100);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
