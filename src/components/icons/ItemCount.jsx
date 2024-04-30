@@ -1,4 +1,4 @@
-const ItemCount = ({stock, initial, onAdd}) => {
+/*const ItemCount = ({stock, initial, onAdd}) => {
     return (
         <div>
             <p>Stock disponible: {stock}</p>
@@ -7,4 +7,4 @@ const ItemCount = ({stock, initial, onAdd}) => {
         </div>
     )
 }
-export default ItemCount;
+export default ItemCount;*/

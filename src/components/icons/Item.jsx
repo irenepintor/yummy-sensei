@@ -1,4 +1,4 @@
-import ItemCount from "./ItemCount";
+/*import ItemCount from "./ItemCount";
 
 const Item = ({item}) => {
     return (
@@ -10,4 +10,4 @@ const Item = ({item}) => {
         </div>
     );
 };
-export default Item;
+export default Item;*/

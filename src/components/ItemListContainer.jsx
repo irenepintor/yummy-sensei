@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
-import ItemList from './icons/ItemList';
-import Data from '../assets/data/yummy-sensei-menu.json'
+import { useEffect, useState } from 'react';
+import getJSON from '../assets/data/yummy-sensei-menu.json'
+//import ItemList from './icons/ItemList';
 
-const ItemListContainer = () => {
-    const [items, setItems] = useState([]);
+const ItemListContainer = (products) => {
+    const [ data, setData ] = useState([]);
+    useEffect(() =>{
+        getJSON()
+            .then((res) => setData(res))
+            .catch((err) => console.log(err))
+            .finally(() => console.log('JSON loaded'))
+            console.log(data);
+    }, [data])
 
-    useEffect(() => {
-        fetch({Data})
-            .then(res => res.json())
-            .then(data => setItems(data))
-            .catch(error => console.log(error))
-    }, []);
-
+    
     return (
-        <>
-            <ItemList items={items}/>
-        </>
-    )
+        <div>
+            {products}
+        </div>
+    );
 }
 export default ItemListContainer;
