@@ -1,20 +1,30 @@
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ItemList from './icons/ItemList';
-import getJSON from '../assets/data/yummy-sensei-menu.json'
-//import ItemList from './icons/ItemList';
+import data from '../assets/data/data';
 
 const ItemListContainer = () => {
-    const [data, setData] = useState([]);
-    useEffect(() => {
-        fetch(getJSON)
-            .then((res) => setData(res))
-            .catch((err) => console.log(err))
-            .finally(() => console.log('JSON loaded'))
-        console.log(data);
-    }, [data])
+    const [ products, setProducts ] = useState([])
+    const { categoryId } = useParams();
+
+    const [ loading, setLoading ] = useState(false)
+
+    useEffect(() =>{
+        data()
+            .then((response) =>{
+                if(categoryId){
+                    const filteredProducts = response.filter(product => product.category === categoryId)
+                    setProducts(filteredProducts)
+                }else{
+                setProducts(response)}
+            })
+            .catch((error) =>{console.log(error);})
+            .finally(() =>{console.log("Finalizo la promesa");})
+    }, [categoryId])
+
     return (
         <>
-            <ItemList/>
+            <ItemList products = {products}/>
         </>
     );
 }

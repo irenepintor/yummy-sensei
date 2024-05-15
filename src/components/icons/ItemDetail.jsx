@@ -1,27 +1,19 @@
-import { Card, CardFooter, CardHeader } from '@fluentui/react-components';
+/* eslint-disable react/prop-types */
 import ItemCount from './ItemCount';
 
-const ItemDetail = () => {
+const ItemDetail = ({product}) => {
     return (
         <>
-            <Card>
-                <CardHeader>
-                    <img src="" alt="" />
-                    <h2></h2>
-                </CardHeader>
-                <CardFooter>
-                    <ItemCount/>
-                </CardFooter>
-            </Card>
+            <div>
+                <img src={product.image} alt={product.name} />
+                <h2>{product.name}</h2>
+                <h6>Categoria: {product.category}</h6>
+                <h6>Stock: {product.stock}</h6>
+                <h3>Precio: ${product.price}</h3>
+                <h2>{product.description}</h2>
+                <ItemCount/>
+            </div>
         </>
     );
 };
 export default ItemDetail;
-
-        // "id": 1,
-		// "name": "KARAAGE",
-		// "image": "/karaagee.png",
-		// "section": "entradas",
-		// "description": "Buñuelos de pollo fritos y rebozados en masa acompañado con salsa semi picante",
-		// "price": 5000,
-		// "stock": 10
