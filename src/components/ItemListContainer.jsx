@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ItemList from './icons/ItemList';
 import data from '../assets/data/data';
+import { IconLoader } from '@tabler/icons-react';
 
 const ItemListContainer = () => {
     const [ products, setProducts ] = useState([])
@@ -10,6 +11,7 @@ const ItemListContainer = () => {
     const [ loading, setLoading ] = useState(false)
 
     useEffect(() =>{
+        setLoading(true)
         data()
             .then((response) =>{
                 if(categoryId){
@@ -19,12 +21,14 @@ const ItemListContainer = () => {
                 setProducts(response)}
             })
             .catch((error) =>{console.log(error);})
-            .finally(() =>{console.log("Finalizo la promesa");})
+            .finally(() =>{setLoading(false)})
     }, [categoryId])
 
     return (
         <>
-            <ItemList products = {products}/>
+            {
+                loading ? <IconLoader>Cargando...</IconLoader> : <ItemList products = {products}/>
+            }
         </>
     );
 }
