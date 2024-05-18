@@ -6,7 +6,8 @@
 		"category": "Entradas",
 		"description": "Buñuelos de pollo fritos y rebozados en masa acompañado con salsa semi picante",
 		"price": 5000,
-		"stock": 10
+		"stock": 5,
+		"boughtCount": "0"
 	},
 	{
 		"id": "gyoza",
@@ -15,7 +16,8 @@
 		"category": "Entradas",
 		"description": "Dumplings rellenos de carne de cerdo y nira (cebollín japonés), cocidos al vapos y sellados en aceite (5 unidades)",
 		"price": 5000,
-		"stock": 10
+		"stock": 7,
+		"boughtCount": "0"
 	},
 	{
 		"id": "ebi-furai",
@@ -24,7 +26,8 @@
 		"category": "Entradas",
 		"description": "Langostinos rebozados en panko, fritos (3 unidades)",
 		"price": 5000,
-		"stock": 10
+		"stock": 10,
+		"boughtCount": "0"
 	},
 	{
 		"id": "takoyaki",
@@ -33,7 +36,8 @@
 		"category": "Entradas",
 		"description": "Buñuelos hechos de masa de harina con huevo y rellenos de pulpo (5 unidades)",
 		"price": 6500,
-		"stock": 10
+		"stock": 12,
+		"boughtCount": "0"
 	},
 	{
 		"id": "rabas",
@@ -42,7 +46,8 @@
 		"category": "Entradas",
 		"description": "Aros de calamar rebozados en panko, fritos.",
 		"price": 6000,
-		"stock": 10
+		"stock": 15,
+		"boughtCount": "0"
 	},
 	{
 		"id": "tempura-udon",
@@ -51,7 +56,8 @@
 		"category": "Udon",
 		"description": "Sopa de udon con tempura de vegetales y kamaboko (pasta de pescado).",
 		"price": 8500,
-		"stock": 10
+		"stock": 4,
+		"boughtCount": "0"
 	},
 	{
 		"id": "kitsune-udon",
@@ -60,7 +66,8 @@
 		"category": "Udon",
 		"description": "Sopa de udon con age (bocado de tofu frito agridulce), kamaboko (pasta de pescado) y variedad de vegetales.",
 		"price": 8500,
-		"stock": 10
+		"stock": 6,
+		"boughtCount": "0"
 	},
 	{
 		"id": "yasai-udon",
@@ -69,7 +76,8 @@
 		"category": "Udon",
 		"description": "Udon de caldo de verduras con toppings vegetarianos.",
 		"price": 8500,
-		"stock": 10
+		"stock": 10,
+		"boughtCount": "0"
 	},
 	{
 		"id": "tonkatsu",
@@ -78,7 +86,8 @@
 		"category": "Plato Principal",
 		"description": "Milanesa de cerdo rebozada en panko, frita, crocante con salsa tonkatsu, acompañada por arroz.",
 		"price": 7000,
-		"stock": 10
+		"stock": 2,
+		"boughtCount": "0"
 	},
 	{
 		"id": "chicken-teriyaki",
@@ -87,7 +96,8 @@
 		"category": "Plato Principal",
 		"description": "Salteado de pollo con morrones y cebolla al wok, glaseado en salsa teriyaki (agridulce), acompañado por arroz.",
 		"price": 7500,
-		"stock": 10
+		"stock": 5,
+		"boughtCount": "0"
 	},
 	{
 		"id": "unagi-udon",
@@ -96,7 +106,8 @@
 		"category": "Plato Principal",
 		"description": "Ánguila grillada estilo kabayaki, sobre colchón de arroz con salsa agridulce.",
 		"price": 19000,
-		"stock": 10
+		"stock": 7,
+		"boughtCount": "0"
 	},
 	{
 		"id": "saba-teishoku",
@@ -105,16 +116,18 @@
 		"category": "Plato Principal",
 		"description": "Caballa grillada a la plancha con arroz blanco, sopa de miso, ensalada fresca y acompañamientos del día.",
 		"price": 10500,
-		"stock": 10
+		"stock": 5,
+		"boughtCount": "0"
 	},
 	{
 		"id": "yasai-itame",
 		"name": "YASAI ITAME",
 		"image": "https://www.justonecookbook.com/wp-content/uploads/2020/04/Stir-Fry-Vegetables-Yasai-Itame-7817-I.jpg",
 		"category": "Plato Principal",
-		"description": "Spaghetti with tomato sauce",
+		"description": "Vegetales salteados con carne de cerdo.",
 		"price": 8500,
-		"stock": 10
+		"stock": 12,
+		"boughtCount": "0"
 	},
 	{
 		"id": "matcha-swissroll",
@@ -123,7 +136,8 @@
 		"category": "Postres",
 		"description": "Bizcocho arrollado esponjoso con un remolino de relleno de crema de matcha fresca. Ligero, cremoso y dulce. (2 unidades + bebida)",
 		"price": 11500,
-		"stock": 10
+		"stock": 2,
+		"boughtCount": "0"
 	},
 	{
 		"id": "berries-cake",
@@ -132,7 +146,8 @@
 		"category": "Postres",
 		"description": "Húmedo, aireado y ligero, el pastel de fresa japonés más popular. (1 porción + bebida)",
 		"price": 9500,
-		"stock": 10
+		"stock": 3,
+		"boughtCount": "0"
 	},
 	{
 		"id": "apple-pie",
@@ -141,7 +156,8 @@
 		"category": "Postres",
 		"description": "Manzanas y hojalde horneado, acompañado con una bocha de helado (1 porción + helado + bebida)",
 		"price": 9000,
-		"stock": 10
+		"stock": 6,
+		"boughtCount": "0"
 	},
 	{
 		"id": "matcha-latte",
@@ -149,8 +165,9 @@
 		"image": "https://www.sugimotousa.com/asset/5f6d2413c43f9",
 		"category": "Infusión",
 		"description": "Latte suave y cremoso hecho con polvo de matcha de alta calidad.",
-		"price": 4.99,
-		"stock": 30
+		"price": 3000,
+		"stock": 10,
+		"boughtCount": "0"
 	},
 	{
 		"id": "sakura-blossom-tea",
@@ -158,8 +175,9 @@
 		"image": "https://img.freepik.com/fotos-premium/taza-te-flor-cerezo-al-fondo_786255-10966.jpg",
 		"category": "Infusión",
 		"description": "Delicado té infusionado con flores de cerezo, con un sabor ligero y refrescante.",
-		"price": 3.99,
-		"stock": 25
+		"price": 3500,
+		"stock": 9,
+		"boughtCount": "0"
 	},
 	{
 		"id": "yusu-lemonade",
@@ -167,8 +185,9 @@
 		"image": "https://emilylaurae.com/wp-content/uploads/2023/07/yuzu-lemonade-2.jpg",
 		"category": "Limonada",
 		"description": "Limonada aromática y ácida hecha con yuzu fresco.",
-		"price": 5.49,
-		"stock": 20
+		"price": 2100,
+		"stock": 13,
+		"boughtCount": "0"
 	},
 	{
 		"id": "hojicha-latte",
@@ -176,8 +195,9 @@
 		"image": "https://www.justonecookbook.com/wp-content/uploads/2023/09/Iced-Hojicha-Latte-3679-I.jpg",
 		"category": "Infusión",
 		"description": "Latte rico y tostado hecho con hojas de té verde japonés tostadas.",
-		"price": 4.79,
-		"stock": 28
+		"price": 2300,
+		"stock": 4,
+		"boughtCount": "0"
 	},
 	{
 		"id": "plum-wine",
@@ -185,8 +205,9 @@
 		"image": "https://nankaishochu.com/wp-content/uploads/2021/01/Umeko_S.jpg",
 		"category": "Vino",
 		"description": "Vino de ciruela japonés dulce y afrutado, perfecto como aperitivo.",
-		"price": 9.99,
-		"stock": 15
+		"price": 4700,
+		"stock": 10,
+		"boughtCount": "0"
 	},
 	{
 		"id": "mugi-cha",
@@ -194,8 +215,9 @@
 		"image": "https://casaperris.com/wp-content/uploads/2023/05/1583261941717ffffffffb1e74d9f.jpg?nocache=1715759499",
 		"category": "Infusión",
 		"description": "Té refrescante y terroso hecho con granos de cebada tostados",
-		"price": 3.49,
-		"stock": 35
+		"price": 2450,
+		"stock": 11,
+		"boughtCount": "0"
 	},
 	{
 		"id": "sake",
@@ -203,8 +225,9 @@
 		"image": "https://www.elindependiente.com/wp-content/uploads/2018/07/sake-platea-1440x808.jpg",
 		"category": "Vino",
 		"description": "Vino de arroz japonés tradicional con un sabor limpio y fresco.",
-		"price": 12.99,
-		"stock": 18
+		"price": 7000,
+		"stock": 18,
+		"boughtCount": "0"
 	},
 	{
 		"id": "umeshu",
@@ -212,8 +235,9 @@
 		"image": "https://www.justonecookbook.com/wp-content/uploads/2019/11/Umeshu-8907-I-3-600x400.jpg",
 		"category": "Vino",
 		"description": "Vino de ciruela dulce y aromático hecho con frutas de ume japonesas.",
-		"price": 11.49,
-		"stock": 12
+		"price": 4100,
+		"stock": 12,
+		"boughtCount": "0"
 	},
 	{
 		"id": "sencha-tea",
@@ -221,8 +245,9 @@
 		"image": "https://www.justonecookbook.com/wp-content/uploads/2020/10/How-to-Cold-Brew-Green-Tea-9839-600x400.jpg",
 		"category": "Infusión",
 		"description": "Té verde japonés clásico con un sabor refrescante y herbáceo.",
-		"price": 3.99,
-		"stock": 22
+		"price": 3070,
+		"stock": 17,
+		"boughtCount": "0"
 	},
 	{
 		"id": "mizudashi-cold-brew",
@@ -230,7 +255,8 @@
 		"image": "https://www.foxcoffee.com.au/cdn/shop/products/101564629_2371580962944626_7783223482578256138_n_5000x.jpg?v=1670905724",
 		"category": "Infusión",
 		"description": "Café frío suave con toques de chocolate y nueces.",
-		"price": 5.99,
-		"stock": 20
+		"price": 3110,
+		"stock": 16,
+		"boughtCount": "0"
 	}
 ]

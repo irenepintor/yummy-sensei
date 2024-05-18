@@ -1,17 +1,18 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ItemList from './icons/ItemList';
 import data from '../assets/data/data';
-import { IconLoader } from '@tabler/icons-react';
+import ItemList from './icons/ItemList';
+import useLoading from '../hooks/useLoading';
 
-const ItemListContainer = () => {
+const ItemListContainer = ( {greetings} ) => {
     const [ products, setProducts ] = useState([])
+    const { loading, startLoading, stopLoading, loadScreen } = useLoading()
     const { categoryId } = useParams();
 
-    const [ loading, setLoading ] = useState(false)
-
     useEffect(() =>{
-        setLoading(true)
+        startLoading()
         data()
             .then((response) =>{
                 if(categoryId){
@@ -21,14 +22,17 @@ const ItemListContainer = () => {
                 setProducts(response)}
             })
             .catch((error) =>{console.log(error);})
-            .finally(() =>{setLoading(false)})
+            .finally(() =>{stopLoading()})
     }, [categoryId])
 
     return (
         <>
-            {
-                loading ? <IconLoader>Cargando...</IconLoader> : <ItemList products = {products}/>
-            }
+            <div>
+                <h1>{greetings}</h1>
+                <div className='flex flex-row place-content-center content-center'>
+                    { loading ? loadScreen : <ItemList products = {products}/> }
+                </div>
+            </div>
         </>
     );
 }

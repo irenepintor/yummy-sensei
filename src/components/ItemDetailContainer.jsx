@@ -7,6 +7,10 @@ const ItemDetailContainer = () =>{
     const [product, setProduct] = useState({})
     const { itemId } = useParams()
 
+    const handleAddProductToCart = (product) =>{
+        console.log(product)
+    }
+
     useEffect(()=>{
         getProductsData()
         .then((response) =>{
@@ -19,7 +23,7 @@ const ItemDetailContainer = () =>{
     
     return(
         <>
-            <ItemDetail product={product}/>
+            <ItemDetail product={product} addProduct={handleAddProductToCart} />
         </>
     )
 }
