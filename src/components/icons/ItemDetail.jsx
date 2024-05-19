@@ -2,13 +2,18 @@
 import ItemCount from './ItemCount';
 
 const ItemDetail = ({product, addProductToCart}) => {
-    const addProduct = (count) =>{
+    const handleAddToCart = (count) =>{
         const cartProduct = {
             ...product, 
             quantity : count
             }
             addProductToCart(cartProduct)
     }
+
+    if(!product || !product.price){
+        return <h1>Precio no Disponible!</h1>
+    }
+
     return (
         <>
             <div className='flex justify-center items-center p-6 w-max bg-white rounded shadow'>
@@ -26,8 +31,7 @@ const ItemDetail = ({product, addProductToCart}) => {
                         <h2>{product.description}</h2>
                     </div>
                     <div>
-                        <ItemCount stock={product.stock} initial={1} onAdd={addProduct} />
-
+                        <ItemCount stock={product.stock} initial={1} onAdd={handleAddToCart} />
                     </div>
                 </div>
             </div>

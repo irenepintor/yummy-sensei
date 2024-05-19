@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import getProductsData from "../assets/data/data";
-import ItemDetail from "./icons/ItemDetail";
 import { useParams } from "react-router-dom";
+import { getProductsData } from "../assets/data/data";
+import ItemDetail from "./icons/ItemDetail";
 
 const ItemDetailContainer = () =>{
     const [product, setProduct] = useState({})
@@ -23,7 +23,7 @@ const ItemDetailContainer = () =>{
     
     return(
         <>
-            <ItemDetail product={product} addProduct={handleAddProductToCart} />
+            <ItemDetail product={product} addProductToCart={handleAddProductToCart} />
         </>
     )
 }

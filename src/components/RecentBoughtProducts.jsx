@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import getProductsData from "../assets/data/data";
+import { getProductsData } from "../assets/data/data";
 import ItemDetail from "./icons/ItemDetail";
 
 const MostBoughtProducts = () => {
