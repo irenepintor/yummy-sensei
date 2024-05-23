@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { getProductsData } from "../assets/data/data";
-import ItemDetail from "./icons/ItemDetail";
+import ItemDetail from "./ItemDetailContainer/ItemDetail";
 
-const MostBoughtProducts = () => {
+const RecentBoughtProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
@@ -40,4 +40,4 @@ const MostBoughtProducts = () => {
         </>
     );
 };
-export default MostBoughtProducts;
+export default RecentBoughtProducts;

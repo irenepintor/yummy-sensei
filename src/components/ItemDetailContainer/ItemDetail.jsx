@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import ItemCount from './ItemCount';
+import ItemCount from '../icons/ItemCount';
 
 const ItemDetail = ({product, addProductToCart}) => {
     const handleAddToCart = (count) =>{

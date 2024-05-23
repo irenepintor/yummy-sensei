@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useParams } from 'react-router-dom';
-import { useLoading } from '../hooks/useLoading';
-import { getProductsData } from '../assets/data/data';
+import useLoading from '../../hooks/useLoading';
+import { getProductsData } from '../../assets/data/data';
 import { useEffect, useState } from 'react';
-import ItemList from './icons/ItemList';
+import ItemList from './ItemList';
 
 const ItemListContainer = ({ greetings }) => {
     const { categoryId } = useParams();

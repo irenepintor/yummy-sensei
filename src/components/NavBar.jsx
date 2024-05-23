@@ -1,16 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { Button } from '@headlessui/react';
-import { useCategory } from "../context/CategoryContext";
 import { getCategories } from '../assets/data/data';
 import { useEffect, useState } from 'react';
 import Brand from "./icons/Brand";
-import CartWidget from "./icons/CartWidget";
+import CartWidget from "./Cart/CartWidget";
 
 const NavBar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [allCategories, setAllCategories] = useState([]);
-    const { setCategoryFilter } = useCategory()
 
     useEffect(() => {
         fetchCategories();
@@ -25,8 +23,7 @@ const NavBar = () => {
         }
     };
 
-    const handleCategoryClick = (category) => {
-        setCategoryFilter(category);
+    const handleCategoryClick = () => {
         setIsDropdownOpen(false);
     }
 
