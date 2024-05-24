@@ -1,12 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import { Button } from '@headlessui/react';
-import { getCategories } from '../assets/data/data';
 import { useEffect, useState } from 'react';
+import { getCategories } from '../assets/data/data';
 import Brand from "./icons/Brand";
 import CartWidget from "./Cart/CartWidget";
 
-const NavBar = () => {
+const NavBar = ({onCategorySelect}) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [allCategories, setAllCategories] = useState([]);
 
@@ -23,8 +22,9 @@ const NavBar = () => {
         }
     };
 
-    const handleCategoryClick = () => {
+    const handleCategoryClick = (category) => {
         setIsDropdownOpen(false);
+        onCategorySelect(category);
     }
 
     return (
@@ -32,11 +32,11 @@ const NavBar = () => {
             <Brand />
             <Link to="/home">Inicio</Link>
             <div className='relative'>
-                <Button
+                <button
                     className="text-gray-800 opacity-80 hover:opacity-100"
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
                     Productos
-                </Button>
+                </button>
                 {
                     isDropdownOpen && (
                         <div
@@ -49,13 +49,14 @@ const NavBar = () => {
                                     Todos los productos
                                 </Link>
                                 {
-                                    allCategories.map((category) => (
-                                        <Button
-                                            key={category.id}
+                                    allCategories.map((category, index) => (
+                                        <button
+                                            key={index}
+                                            to={`/category/${category}`}
                                             className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100`}
                                             onClick={() => handleCategoryClick(category)}>
                                             {category}
-                                        </Button>
+                                        </button>
                                     ))
                                 }
                             </div>
@@ -67,7 +68,7 @@ const NavBar = () => {
                 <Link to="/carta">Carta</Link>
                 <Link to="/contacto">Contacto</Link>
             </div>
-            <CartWidget />
+            <CartWidget onCategorySelect={onCategorySelect} />
         </nav>
     )
 }

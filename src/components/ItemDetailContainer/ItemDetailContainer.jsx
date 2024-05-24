@@ -1,30 +1,46 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { getProductsData } from "../../assets/data/data";
 import ItemDetail from "./ItemDetail";
 
 const ItemDetailContainer = () =>{
-    const [product, setProduct] = useState({})
-    const { itemId } = useParams()
+    const { itemId } = useParams();
+    const [product, setProduct] = useState(null);
+    const [loading, setLoading] = useState(true);
+    
+    useEffect(() =>{
+        fetchProductsDetails();
+    }, [itemId])
 
-    const handleAddProductToCart = (product) =>{
-        console.log(product)
+    const fetchProductsDetails = async () =>{
+        try{
+            const productsData = await getProductsData();
+            const selectedProduct = productsData.find(product => product.id === itemId);
+            if (selectedProduct){
+                setProduct(selectedProduct);
+            } else{
+                console.log(`Product with ID ${itemId} not found`);
+            }
+            setLoading(false);
+        } catch(error){
+            console.log('Error fetching product details:', error);
+            setLoading(false);
+        }
+    };
+
+    if(loading){
+        return <div>Loading...</div>
     }
 
-    useEffect(()=>{
-        getProductsData()
-        .then((response) =>{
-            const findProduct = response.find((productResponse) => productResponse.id === itemId )
-            setProduct(findProduct)
-        })
-        .catch(error => console.log(error))
-        .finally(()=> console.log("finalizado"))
-    },[itemId])
-    
+    if(product === null){
+        return <div>Product not found...</div>
+    }
+
     return(
-        <>
-            <ItemDetail product={product} addProductToCart={handleAddProductToCart} />
-        </>
+        <div>
+            <ItemDetail product={product} />
+        </div>
     )
 }
 export default ItemDetailContainer;

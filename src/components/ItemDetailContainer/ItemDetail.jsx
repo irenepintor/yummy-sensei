@@ -1,41 +1,27 @@
 /* eslint-disable react/prop-types */
-import ItemCount from '../icons/ItemCount';
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
-const ItemDetail = ({product, addProductToCart}) => {
-    const handleAddToCart = (count) =>{
-        const cartProduct = {
-            ...product, 
-            quantity : count
-            }
-            addProductToCart(cartProduct)
-    }
+const ItemDetail = ({ product }) => {
+    const { addToCart } = useContext(CartContext);
 
-    if(!product || !product.price){
-        return <h1>Precio no Disponible!</h1>
-    }
+    const handleAddToCart = () => {
+        addToCart(product, 1);
+    };
 
     return (
         <>
-            <div className='flex justify-center items-center p-6 w-max bg-white rounded shadow'>
-                <div className='flex flex-col justify-center items-center '>
-                    <div className='  '>
-                        <img src={product.image} alt={product.name} />
-                    </div>
-                    <div>
-                        <h2>{product.name}</h2>
-                        <h6>Categoria: {product.category}</h6>
-                        <h6>Stock: {product.stock}</h6>
-                    </div>
-                    <div>
-                        <h3>Precio: ${product.price.toFixed(2)}</h3>
-                        <h2>{product.description}</h2>
-                    </div>
-                    <div>
-                        <ItemCount stock={product.stock} initial={1} onAdd={handleAddToCart} />
-                    </div>
-                </div>
-            </div>
+            <div className="item-detail bg-white p-6 rounded-lg shadow-md">
+            <h2 className="text-xl font-bold mb-4">{product.name}</h2>
+            <img src={product.image} alt={product.name} className="w-full h-auto mb-4 rounded-md" />
+            <p className="text-gray-700 mb-4">{product.description}</p>
+            <p className="text-gray-900 font-semibold">${product.price}</p>
+            <button onClick={handleAddToCart} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                Agregar
+            </button>
+        </div>
         </>
     );
-};
+}
+
 export default ItemDetail;

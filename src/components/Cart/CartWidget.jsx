@@ -1,20 +1,19 @@
-/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
-import CartIcon from "./CartIcon";
 import { useContext } from "react";
-// import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../context/CartContext";
+import CartIcon from "./CartIcon";
 
 const CartWidget = () => {
-    // const { totalAmount } = useContext(CartContext);
+    const { cart } = useContext(CartContext);
 
-
+    const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
 
     return (
-        <Link to="/cart" className=" flex flex-row justify-between items-center pt-10 ">
+        <Link to="/cart" className="flex flex-row justify-between items-center pt-10">
             <CartIcon />
-            <span>0</span>
-            {/* <span>{totalAmount()}</span> */}
+            <span>{totalItems}</span>
         </Link>
-    )
-}
+    );
+};
+
 export default CartWidget;
