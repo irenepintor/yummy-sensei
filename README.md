@@ -106,7 +106,7 @@ Irene Pintor
   <a href="https://www.linkedin.com/in/irene-pintor/"><img alt="Linkedin" title="Irene Pintor Linkedin" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
   <a href="https://github.com/irenepintor"><img alt="Github" title="Irene Pintor Github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
   <a href="https://www.instagram.com/irene.pintor/"><img alt="Instagram" title="Irene Pintor Instagram" src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"></a>
-  <a href="mailto:pintor.irenefreelance@outlook.com"><img alt="Gmail" title="Irene Pintor" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
+  <a href="mailto:pintor.irenefreelance@outlook.com"><img alt="Outlook" title="Irene Pintor" src="https://img.shields.io/badge/Outlook-004aad?style=for-the-badge&logo=outlook&logoColor=white"></a>
  </p>
 
 
