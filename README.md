@@ -10,6 +10,8 @@
    ![VITE JS](https://img.shields.io/badge/vite-%2320232a.svg?style=for-the-badge&logo=vite&logoColor=%2361DAFB")
    ![REACT JS](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB")
    ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+   ![Firebase](https://img.shields.io/badge/Firebase-38B2AC?style=for-the-badge&logo=firebase&logoColor=white)
+
 
 # React + Vite
 
