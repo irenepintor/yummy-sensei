@@ -2,16 +2,18 @@ import { useState, useEffect } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../db/db.js';
 import { Link } from 'react-router-dom';
+import useLoading from '../../hooks/useLoading.jsx';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const ProductCategories = () => {
     const [categories, setCategories] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { loading, startLoading, stopLoading, LoadingScreen } = useLoading();
     const [error, setError] = useState(null);
 
     const fetchCategories = async () => {
+        startLoading();
         try {
             const productsCollection = collection(db, 'products');
             const snapshot = await getDocs(productsCollection);
@@ -35,7 +37,7 @@ const ProductCategories = () => {
         } catch (err) {
             setError(`Error fetching categories: ${err.message}`);
         } finally {
-            setLoading(false);
+            stopLoading();
         }
     };
 
@@ -44,7 +46,7 @@ const ProductCategories = () => {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <LoadingScreen />;
     }
 
     if (error) {

@@ -8,7 +8,7 @@ import Logout from './components/LogIn/LogOut';
 import NavBar from './components/NavBar';
 import Home from './components/pages/Home'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailConatiner/ItemDetailContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './components/CartContainer/Cart';
 import Checkout from './components/Checkout/Checkout';
 import Menu from './components/pages/Menu'
