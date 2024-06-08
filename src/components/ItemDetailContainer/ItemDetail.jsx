@@ -1,27 +1,36 @@
-/* eslint-disable react/prop-types */
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import ItemCount from '../ItemCount/ItemCount';
+import ProductCategories from '../ItemListContainer/ProductCategories';
 
 const ItemDetail = ({ product }) => {
     const { addToCart } = useContext(CartContext);
 
-    const handleAddToCart = () => {
-        addToCart(product, 1);
-    };
+    const onAdd = (count) => {
+        const productToAdd = { ...product, quantity: count };
+        addToCart(productToAdd);
+    }
 
     return (
         <>
-            <div className="item-detail bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-bold mb-4">{product.name}</h2>
-            <img src={product.image} alt={product.name} className="w-full h-auto mb-4 rounded-md" />
-            <p className="text-gray-700 mb-4">{product.description}</p>
-            <p className="text-gray-900 font-semibold">${product.price}</p>
-            <button onClick={handleAddToCart} className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
-                Agregar
-            </button>
-        </div>
+            <ProductCategories/>
+            <div className="max-w-4xl mx-auto p-6 mt-5 mb-4 bg-white shadow-md rounded-lg flex">
+                <div className="w-1/2">
+                    <img className="w-full h-auto object-cover rounded-lg" src={product.image} alt={product.name} />
+                </div>
+                <div className="w-1/2 pl-10">
+                    <h1 className="text-2xl font-bold text-gray-900 mb-2">{product.name}</h1>
+                    <div className="text-xl font-semibold text-gray-700 mb-4">${product.price}</div>
+                    <p className="text-gray-700 mb-6">{product.description}</p>
+                    <div className="flex mb-4">
+                        <ItemCount 
+                            stock={product.stock}
+                            initial={1}
+                            onAdd={onAdd} />
+                    </div>
+                </div>
+            </div>
         </>
-    );
+    )
 }
-
 export default ItemDetail;

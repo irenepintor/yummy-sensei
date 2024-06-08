@@ -1,13 +1,16 @@
-/* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
+
 const Item = ({ product }) => {
     return (
-        <div className="border rounded-lg p-4 shadow">
-            <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-md" />
-            <h3 className="text-lg font-semibold mt-2">{product.name}</h3>
-            <p className="text-gray-700 mt-1">{product.description}</p>
-            <p className="text-gray-900 font-bold mt-2">${product.price}</p>
-        </div>
+        <Link to={`/item/${product.id}`} className="block bg-white p-4 mt-5 mb-4 rounded-lg shadow-md transition duration-300 hover:shadow-lg">
+            <img className="w-full h-48 object-cover rounded-lg mb-4" src={product.image} alt={product.name} />
+            <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
+            <p className="text-gray-700 mb-2">{product.description}</p>
+            <p className="text-blue-600 font-bold mb-4">${product.price}</p>
+        </Link>
     );
-}
+};
 
 export default Item;
+
+

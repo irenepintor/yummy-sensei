@@ -1,36 +1,55 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
-import { getProductsData } from '../../assets/data/data';
+import { useParams } from 'react-router-dom';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { db } from '../db/db.js';
 import ItemList from './ItemList';
+import ProductCategories from './ProductCategories';
 
-const ItemListContainer = ({ selectedCategory }) => {
+const ItemListContainer = () => {
     const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        fetchProducts();
-    }, [selectedCategory]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    const { categoryId } = useParams();
 
     const fetchProducts = async () => {
         try {
-            const productsData = await getProductsData();
-            if (selectedCategory) {
-                setProducts(productsData.filter(product => product.category === selectedCategory));
-            } else {
-                setProducts(productsData);
+            const productsCollection = collection(db, 'products');
+            let productsQuery = productsCollection;
+
+            if (categoryId) {
+                productsQuery = query(productsCollection, where('category', '==', categoryId));
             }
-        } catch (error) {
-            console.error('Error fetching products:', error);
+
+            const snapshot = await getDocs(productsQuery);
+            const productsList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+            setProducts(productsList);
+        } catch (err) {
+            setError(`Error fetching products: ${err.message}`);
+        } finally {
+            setLoading(false);
         }
     };
 
+    useEffect(() => {
+        fetchProducts();
+    }, [categoryId]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
     return (
-        <div>
-            <h1 className=''>{selectedCategory ? `Categoría: ${selectedCategory}` : 'Productos:'}</h1>
-            <ItemList products={products} />
-        </div>
-    );
-}
+        <>
+            <ProductCategories />
+            <ItemList products={products} />;
+        </>
+    )
+};
 
 export default ItemListContainer;
+
 

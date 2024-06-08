@@ -1,46 +1,55 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getProductsData } from "../../assets/data/data";
+import { useParams } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../db/db.js'
 import ItemDetail from "./ItemDetail";
 
-const ItemDetailContainer = () =>{
-    const { itemId } = useParams();
+const ItemDetailContainer = () => {
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
-    
-    useEffect(() =>{
-        fetchProductsDetails();
-    }, [itemId])
+    const [error, setError] = useState(null);
+    const { itemId } = useParams();
 
-    const fetchProductsDetails = async () =>{
-        try{
-            const productsData = await getProductsData();
-            const selectedProduct = productsData.find(product => product.id === itemId);
-            if (selectedProduct){
-                setProduct(selectedProduct);
-            } else{
-                console.log(`Product with ID ${itemId} not found`);
-            }
+    const getProduct = async () => {
+        if (!itemId) {
+            setError("Product ID is not defined");
             setLoading(false);
-        } catch(error){
-            console.log('Error fetching product details:', error);
+            return;
+        }
+
+        try {
+            const productRef = doc(db, "products", itemId);
+            const snapshot = await getDoc(productRef);
+
+            if (snapshot.exists()) {
+                const data = { id: snapshot.id, ...snapshot.data() };
+                setProduct(data);
+            } else {
+                setError("No such document!");
+            }
+        } catch (err) {
+            setError(`Error getting document: ${err.message}`);
+        } finally {
             setLoading(false);
         }
     };
 
-    if(loading){
-        return <div>Loading...</div>
+    useEffect(() => {
+        getProduct();
+    }, [itemId]);
+
+    if (loading) {
+        return <div>Loading...</div>;
     }
 
-    if(product === null){
-        return <div>Product not found...</div>
+    if (error) {
+        return <div>Error: {error}</div>;
     }
 
-    return(
-        <div>
-            <ItemDetail product={product} />
-        </div>
+    return (
+        <>
+            {product && <ItemDetail product={product} />}
+        </>
     )
-}
+};
 export default ItemDetailContainer;
