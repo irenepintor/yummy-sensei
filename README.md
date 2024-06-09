@@ -44,7 +44,7 @@ Yummy Sensei is an e-commerce platform for a Japanese restaurant based in Buenos
 - `slick-carousel`
 - `yup`
 
-## Future
+## Future Additions
 
 - **Implementing a wishlist.**
 - **Search for Order Number by orderId.**
