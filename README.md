@@ -20,53 +20,6 @@ Yummy Sensei is an e-commerce platform for a Japanese restaurant based in Buenos
 - **Styling**: ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 - **Backend**: ![Firebase](https://img.shields.io/badge/Firebase-DD2C00?style=for-the-badge&logo=firebase&logoColor=white)
 
-## Getting Started
-
-### Prerequisites
-
-- Node.js
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/irenepintor/yummy-sensei.git
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd yummy-sensei
-    ```
-3. Install dependencies:
-    ```sh
-    npm install
-    ```
-    or
-    ```sh
-    yarn install
-    ```
-
-### Running the Project
-
-To start the development server:
-```sh
-npm run dev
-```
-or
-```sh
-yarn dev
-```
-
-### Building for Production
-
-To create a production build:
-```sh
-npm run build
-```
-or
-```sh
-yarn build
-```
 
 ## Usage
 
@@ -75,29 +28,27 @@ yarn build
 - **Category Page**: View products filtered by category.
 - **Product Details**: Detailed view of a selected product.
 - **Cart**: Manage items in your shopping cart.
+- **SignUp**: Register email and password. Authentication by Firebase.
+- **LogIn**: Login into to registered information.
+- **LogOut**: Logout whenever you want.
 
-## Contributing
+## Dependencies
 
-Contributions are welcome! Please follow these steps:
+- `@tabler/icons-react`
+- `firebase`
+- `react`
+- `react-dom`
+- `react-firebase-hooks`
+- `react-router-dom`
+- `react-slick`
+- `slick-carousel`
+- `yup`
 
-1. Fork the repository.
-2. Create a new branch:
-    ```sh
-    git checkout -b feature-name
-    ```
-3. Commit your changes:
-    ```sh
-    git commit -m 'Add some feature'
-    ```
-4. Push to the branch:
-    ```sh
-    git push origin feature-name
-    ```
-5. Open a pull request.
+## Future
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+- **Implementing a wishlist.
+- **Search for Order Number by orderId.
+- **Purchase History.
 
 ## Contact
 
