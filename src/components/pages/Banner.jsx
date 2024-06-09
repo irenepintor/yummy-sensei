@@ -1,17 +1,17 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import img1 from '../../assets/banner/1.png';
-import img2 from '../../assets/banner/2.png';
-import img3 from '../../assets/banner/3.png';
-import img4 from '../../assets/banner/4.png';
-import img5 from '../../assets/banner/5.png';
-import img6 from '../../assets/banner/6.png';
-import img7 from '../../assets/banner/7.png';
-import img8 from '../../assets/banner/8.png';
-import img9 from '../../assets/banner/9.png';
-import img10 from '../../assets/banner/10.png';
-import img11 from '../../assets/banner/11.png';
+import img1 from '/assets/banner/1.png';
+import img2 from '/assets/banner/2.png';
+import img3 from '/assets/banner/3.png';
+import img4 from '/assets/banner/4.png';
+import img5 from '/assets/banner/5.png';
+import img6 from '/assets/banner/6.png';
+import img7 from '/assets/banner/7.png';
+import img8 from '/assets/banner/8.png';
+import img9 from '/assets/banner/9.png';
+import img10 from '/assets/banner/10.png';
+import img11 from '/assets/banner/11.png';
 
 const images = [
     img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11

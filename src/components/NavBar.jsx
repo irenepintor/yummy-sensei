@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 import CartWidget from './CartWidget';
-import logo from '../assets/yummy-sensei-logo.png';
+import logo from '/assets/yummy-sensei-logo.png';
 
 const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
