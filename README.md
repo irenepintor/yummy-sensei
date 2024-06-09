@@ -29,7 +29,7 @@ Yummy Sensei is an e-commerce platform for a Japanese restaurant based in Buenos
 - **Product Details**: Detailed view of a selected product.
 - **Cart**: Manage items in your shopping cart.
 - **SignUp**: Register email and password. Authentication by Firebase.
-- **LogIn**: Login into to registered information.
+- **LogIn**: Login into your registered information.
 - **LogOut**: Logout whenever you want.
 
 ## Dependencies
