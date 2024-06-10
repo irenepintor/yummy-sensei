@@ -88,25 +88,25 @@ const ProductCategories = () => {
 
     return (
         <Slider {...settings}>
-            {categories.map((category) => (
-                <div key={category.id} className="px-4 mt-5 mb-4">
-                    <Link
-                        to={`/category/${category.id}`}
-                        className="inline-block bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-lg shadow-md text-center transition duration-300"
-                        style={{ width: '90%', maxWidth: '300px' }}
-                    >
-                        <div className="relative h-40">
-                            <img
-                                src={category.image}
-                                alt={category.name}
-                                className="absolute inset-0 w-full h-full object-cover rounded-lg transition duration-300 hover:scale-105"
-                            />
-                        </div>
-                        <div className="mt-2">{category.name}</div>
-                    </Link>
+    {categories.map((category) => (
+        <div key={category.id} className="px-4 mt-5 mb-4">
+            <Link
+                to={`/category/${category.id}`}
+                className="inline-block bg-gray-400 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-lg shadow-md text-center transition duration-300 w-full max-w-xs"
+            >
+                <div className="relative h-40 md:h-48">
+                    <img
+                        src={category.image}
+                        alt={category.name}
+                        className="absolute inset-0 w-full h-full object-cover rounded-lg transition duration-300 hover:scale-105"
+                    />
                 </div>
-            ))}
-        </Slider>
+                <div className="mt-2">{category.name}</div>
+            </Link>
+        </div>
+    ))}
+</Slider>
+
     );
 };
 
