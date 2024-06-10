@@ -58,10 +58,10 @@ const NavBar = () => {
                                 )}
                             </ul>
                             <div className="flex items-center space-x-4">
-                                <button className="pl-2 text-gray-600 hover:text-gray-800">
-                                    <CartWidget />
-                                </button>
-                            </div>
+                                     <button className="pl-2 text-gray-600 hover:text-gray-800 sm:pl-4 md:pl-6">
+                                           <CartWidget />
+                                   </button>
+                             </div>
                         </div>
                         <div className="md:hidden">
                             <button onClick={toggleMenu} className="flex items-center px-3 py-2 border rounded text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800">
@@ -103,7 +103,12 @@ const NavBar = () => {
                             </>
                         )}
                     </ul>
-                </div>
+                    <div className="flex items-center space-x-4">
+                         <button className="pl-2 text-gray-600 hover:text-gray-800 sm:pl-4 md:pl-6">
+                                <CartWidget />
+                         </button>
+                    </div>
+                 </div>
             </nav>
         </>
     );
